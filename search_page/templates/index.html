@@ -1,0 +1,24 @@
+{% verbatim %}
+<!DOCTYPE html>
+<html>
+	<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+
+        <meta charset="UTF-8">
+	</head>
+	<body ng-app='myapp'>
+        <script src="static/js/app.js"></script>
+		Поиск: <input ng-model="query">
+		<div ng-controller='ajax_ctrl'>
+            <ul>
+                <li ng-repeat="m in filteredValues = (data.meals | filter:query)">
+                    <span>{{m.name}}</span>
+                    <p>{{m.ingredients}}</p>
+                </li>
+            </ul>
+            <p ng-show="!filteredValues.length">Блюда не найдены</p>
+        </div>
+
+	</body>
+</html>
+{% endverbatim %}
