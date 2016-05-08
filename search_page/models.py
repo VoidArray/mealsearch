@@ -34,7 +34,7 @@ class ListIngredient(models.Model):
         verbose_name = 'Список ингредиентов в рецепте'
 
     recipe = models.ForeignKey(Recipe, related_name='id_recipe')
-    alteringredient = models.ManyToManyField(AlterIngredient, related_name='id_ingridient_w_alter')
+    alteringredient = models.ManyToManyField(AlterIngredient, related_name='id_ingridient_w_alter', blank=True)
     ingredient = models.ManyToManyField(Ingredient, related_name='id_ingridient_wo_alter')
 
     def __str__(self):
