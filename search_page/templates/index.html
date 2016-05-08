@@ -65,7 +65,7 @@
           </div>
           <div><input ng-model="query" placeholder="Введите название блюда или рецепта" size="40"/></div>
           <div class="row" ng-controller='ajax_ctrl'>
-            <div class="col-xs-6 col-lg-4" ng-repeat="meal in filteredValues = (data.meals | filter:query)">
+            <div class="col-xs-6 col-lg-4" ng-repeat="meal in filteredValues = (data.meals | filter: {name : query})">
               <h2 class="text-warning">{{meal.name}}</h2>
               <p class="text-success" ng-repeat="ingredient in meal.ingredients"">{{ingredient}}</p>
               <p><a class="btn btn-default" href="#" role="button">Хочу!</a></p>
